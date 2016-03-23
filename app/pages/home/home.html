@@ -1,0 +1,20 @@
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Train-Info-App</ion-title>
+</ion-navbar>
+
+
+<ion-content padding class="home-started">
+
+<ion-card (click)="openLocationPage()">
+  <ion-card-header>
+    Bahnhof<ionic-icon ios="ion-android-train"></ionic-icon>
+  </ion-card-header>
+  <ion-card-content>
+    Ausgewählter Bahnhof:<br/>{{selectedLocation}}
+  </ion-card-content>
+</ion-card>
+  
+</ion-content>

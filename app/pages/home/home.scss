@@ -1,0 +1,26 @@
+.home-started {
+
+    background-image: url("../img/train-797072_1280.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    
+    
+    ion-card{
+        opacity: 0.9;
+        filter: alpha(opacity=9); /* For IE8 and earlier */    
+        font-size: 3 rem;
+        
+        ion-card-header {
+            margin: 5%;
+            font-weight: bold;
+            color: #000000;
+        }
+        
+        ion-card-content {
+            margin: 5%;
+            font-weight: bold;
+            color: #000000;
+        }
+    }
+}
