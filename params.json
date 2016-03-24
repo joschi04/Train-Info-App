@@ -1,0 +1,6 @@
+{
+  "name": "Train-info-app",
+  "tagline": "",
+  "body": "# Train-Info-App\r\n\r\nZiel:\r\n- Hybrid-App unter Verwendung von Angular2 und Ionic2.\r\n- Inhaltlich werden die Bahnhöfe, Streckenverbindungen sowie die Ankunfts- und Abfahrtstafeln abgebildet.\r\n\r\nEs wird über einen lokalen NodeJs-Server die Bahn-App wegen CORS.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
