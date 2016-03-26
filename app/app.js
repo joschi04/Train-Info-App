@@ -11,10 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ionic_angular_1 = require('ionic-angular');
 var ionic_native_1 = require('ionic-native');
 var home_1 = require('./pages/home/home');
-var list_1 = require('./pages/list/list');
 var location_1 = require('./pages/location/location');
+var locationSelected_1 = require('./pages/locationSelected/locationSelected');
+var dateandtime_1 = require('./pages/dateandtime/dateandtime');
 var bahnService_1 = require('./service/bahnService');
 var localStorage_1 = require('./service/localStorage');
+var core_1 = require('angular2-google-maps/core');
 var MyApp = (function () {
     function MyApp(app, platform, menu) {
         this.app = app;
@@ -26,8 +28,9 @@ var MyApp = (function () {
         // set our app's pages
         this.pages = [
             { title: 'Startseite', component: home_1.HomePage },
-            { title: 'My First List', component: list_1.ListPage },
-            { title: 'Bahnhof', component: location_1.LocationPage }
+            { title: 'Bahnhof auswählen', component: location_1.LocationPage },
+            { title: 'Details zum Bahnhof', component: locationSelected_1.LocationSelectedPage },
+            { title: 'Datum und Zeit wählen', component: dateandtime_1.DateAndTimePage }
         ];
     }
     MyApp.prototype.initializeApp = function () {
@@ -47,7 +50,7 @@ var MyApp = (function () {
     MyApp = __decorate([
         ionic_angular_1.App({
             templateUrl: 'build/app.html',
-            providers: [bahnService_1.BahnService, localStorage_1.LocalStorage],
+            providers: [bahnService_1.BahnService, localStorage_1.LocalStorage, core_1.ANGULAR2_GOOGLE_MAPS_PROVIDERS],
             config: {} // http://ionicframework.com/docs/v2/api/config/Config/
         }), 
         __metadata('design:paramtypes', [ionic_angular_1.IonicApp, ionic_angular_1.Platform, ionic_angular_1.MenuController])

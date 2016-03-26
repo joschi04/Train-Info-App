@@ -9,14 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var ionic_angular_1 = require('ionic-angular');
-var home_1 = require('../home/home');
+var locationSelected_1 = require('../locationSelected/locationSelected');
 var bahnService_1 = require('../../service/bahnService');
-var localStorage_1 = require('../../service/localStorage');
 var LocationPage = (function () {
-    function LocationPage(nav, bahnService, localStorage) {
+    function LocationPage(nav, bahnService) {
         this.nav = nav;
         this.bahnService = bahnService;
-        this.localStorage = localStorage;
         this.searchQuery = '';
         this.x = "";
     }
@@ -43,14 +41,13 @@ var LocationPage = (function () {
         });
     };
     LocationPage.prototype.setSelectedLocation = function (selectedLocation) {
-        this.localStorage.selectedLocation = selectedLocation;
-        this.nav.setRoot(home_1.HomePage);
+        this.nav.push(locationSelected_1.LocationSelectedPage, { selectedLocation: selectedLocation });
     };
     LocationPage = __decorate([
         ionic_angular_1.Page({
             templateUrl: 'build/pages/location/location.html'
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, bahnService_1.BahnService, localStorage_1.LocalStorage])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, bahnService_1.BahnService])
     ], LocationPage);
     return LocationPage;
 }());

@@ -6,14 +6,13 @@
 </ion-navbar>
 
 
-<ion-content class="getting-started">
-
-
+<ion-content class="location-started">
     <ion-searchbar placeholder="Suchen" cancelButtonText="Abbrechen" [(ngModel)]="searchQuery" (input)="getItems($event)"></ion-searchbar>
-    <ion-list>
-        <button ion-item *ngFor="#item of items" (click)="setSelectedLocation(item)">
-            {{item.name}}
-        </button>
-    </ion-list>
-
+    <div class="list">
+        <ion-list>
+            <button ion-item *ngFor="#item of items" (click)="setSelectedLocation(item)">
+                {{item.name}}
+            </button>
+        </ion-list>
+    </div>
 </ion-content>

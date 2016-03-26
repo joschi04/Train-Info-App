@@ -10,11 +10,17 @@
 
 <ion-card (click)="openLocationPage()">
   <ion-card-header>
-    Bahnhof<ionic-icon ios="ion-android-train"></ionic-icon>
+    <ion-icon name="train"></ion-icon> Bahnhof auswählen
   </ion-card-header>
   <ion-card-content>
     Ausgewählter Bahnhof:<br/>{{selectedLocation}}
   </ion-card-content>
+</ion-card>
+
+<ion-card (click)="openLocationPage()">
+  <ion-card-header>
+    <ion-icon name="arrow-dropup-circle"></ion-icon> Abfahrtstafel
+  </ion-card-header>
 </ion-card>
   
 </ion-content>

@@ -1,0 +1,36 @@
+<ion-navbar *navbar>
+  <button menuToggle *ngIf="!_selectedLocation">
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Bahnhof-Details</ion-title>
+</ion-navbar>
+
+<ion-content padding class="locationSelected-started ">
+ <div *ngIf="_selectedLocation">
+     <ion-card>
+        <ion-card-header>
+            <ion-icon name="train"></ion-icon> {{name}}
+        </ion-card-header>
+     </ion-card>
+     <ion-card>
+        <ion-card-header>Ansicht auf Karte:</ion-card-header>
+        <ion-card-content>
+            <sebm-google-map [latitude]="lat" [longitude]="lng">
+            </sebm-google-map>
+        </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-toolbar position="bottom" *ngIf="_selectedLocation">
+    <ion-buttons start>
+        <button (click)="goToHome(false)">
+            <ion-icon name="close"></ion-icon>Abbrechen
+        </button>
+    </ion-buttons>
+    <ion-buttons end>
+        <button (click)="goToHome(true)">
+            <ion-icon name="checkmark"></ion-icon>Übernehmen
+        </button>
+    </ion-buttons>
+</ion-toolbar>

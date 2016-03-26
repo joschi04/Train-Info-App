@@ -1,0 +1,23 @@
+
+
+.locationSelected-started {
+
+    background-image: url("../img/station-957615_1920.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    
+    ion-card{
+        opacity: 0.95;
+        filter: alpha(opacity=95); /* For IE8 and earlier */    
+        
+        ion-card-header {
+            margin: 5%;
+            font-weight: bold;
+        }
+    }
+    
+    .sebm-google-map-container {
+    height: 200px;
+    }
+}

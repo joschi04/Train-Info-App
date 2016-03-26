@@ -1,7 +1,6 @@
 import {Page, NavController} from 'ionic-angular';
-import {HomePage} from '../home/home'
+import {LocationSelectedPage} from '../locationSelected/locationSelected'
 import {BahnService} from '../../service/bahnService';
-import {LocalStorage} from '../../service/localStorage';
 import {ILocation} from '../../common/types'
 
 @Page({
@@ -12,7 +11,7 @@ export class LocationPage {
     x:string = "";
     items:ILocation[];
    
-    constructor(private nav: NavController, private bahnService:BahnService, private localStorage: LocalStorage){
+    constructor(private nav: NavController, private bahnService:BahnService){
     }
     
     getItems(searchbar) {
@@ -43,7 +42,7 @@ export class LocationPage {
     }
     
     setSelectedLocation(selectedLocation:ILocation) {
-        this.localStorage.selectedLocation = selectedLocation;
-        this.nav.setRoot(HomePage);
+        
+        this.nav.push(LocationSelectedPage,{selectedLocation:selectedLocation});
     }
 }

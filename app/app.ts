@@ -4,13 +4,15 @@ import {HomePage} from './pages/home/home';
 import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
 import {ListPage} from './pages/list/list';
 import {LocationPage} from './pages/location/location';
+import {LocationSelectedPage} from './pages/locationSelected/locationSelected'
+import {DateAndTimePage} from './pages/dateandtime/dateandtime';
 import {BahnService} from './service/bahnService';
 import {LocalStorage} from './service/localStorage';  
-
+import {ANGULAR2_GOOGLE_MAPS_PROVIDERS} from 'angular2-google-maps/core';
 
 @App({
   templateUrl: 'build/app.html',
-  providers: [BahnService, LocalStorage],
+  providers: [BahnService, LocalStorage, ANGULAR2_GOOGLE_MAPS_PROVIDERS],
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 class MyApp {
@@ -28,8 +30,9 @@ class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Startseite', component: HomePage },
-      { title: 'My First List', component: ListPage },
-      { title: 'Bahnhof', component: LocationPage }
+      { title: 'Bahnhof auswählen', component: LocationPage },
+      { title: 'Details zum Bahnhof', component: LocationSelectedPage },
+      { title: 'Datum und Zeit wählen', component: DateAndTimePage }
     ];
     
   }

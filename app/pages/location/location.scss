@@ -1,0 +1,16 @@
+.location-started {
+
+    background-image: url("../img/station-957615_1920.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    
+    ion-searchbar{
+        background: rgba(211, 211, 211, 0.9);
+    }
+        
+    ion-list{
+        opacity: 0.9;
+        filter: alpha(opacity=9); /* For IE8 and earlier */    
+    }
+}

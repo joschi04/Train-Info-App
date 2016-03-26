@@ -8,12 +8,9 @@ import "rxjs/add/operator/catch";
 
 @Injectable()
 export class BahnService {
-
-    http: Http;
+    private hostUrl = "has to be set";
     
-    constructor (http: Http) {
-
-        this.http = http;
+    constructor (private http: Http) {
     }
 
     encodeSpaces (query: string) {
@@ -24,7 +21,7 @@ export class BahnService {
     searchStation (searchString: string) {
 
         let query = this.encodeSpaces(searchString);
-        let url = "http://localhost:8080/stations?query=" + searchString;
+        let url = this.hostUrl + "/stations?query=" + searchString;
 
         return this.http
             .get(url)

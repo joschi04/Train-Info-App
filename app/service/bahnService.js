@@ -16,13 +16,14 @@ require("rxjs/add/operator/catch");
 var BahnService = (function () {
     function BahnService(http) {
         this.http = http;
+        this.hostUrl = "http://bahnapi.azurewebsites.net";
     }
     BahnService.prototype.encodeSpaces = function (query) {
         return query.replace(" ", "+");
     };
     BahnService.prototype.searchStation = function (searchString) {
         var query = this.encodeSpaces(searchString);
-        var url = "http://localhost:8080/stations?query=" + searchString;
+        var url = this.hostUrl + "/stations?query=" + searchString;
         return this.http
             .get(url)
             .map(function (res) { return res.json(); })
